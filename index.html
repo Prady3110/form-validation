@@ -1,0 +1,83 @@
+<!DOCTYPE>
+<html>
+<head><title>HTML FORM VALIDATION</title>
+<style type="text/css">
+	input
+	{
+	  width:400px;
+	  height:35px;
+	  border-radius:5px;
+	  border:2px solid blue;
+
+	}
+	button
+	{
+	
+	  background-color:green;
+	 
+	 
+	}
+	button:hover
+	{
+	background-color:blue;
+	}
+</style>
+
+</head>
+<body>
+
+<form  autocomplete="off" onsubmit="return abc()">
+<div  align= "center">
+<div><input type="text" id="name" placeholder="Name"></div>
+<label id="msg"></label><br>
+<div><input type="text" id="email" placeholder="Email"></div>
+<label id="em"></label><br>
+<div><input type="password" id="pass" placeholder="Password"></div>
+<label id="pas"></label><br>
+<div><input type="password" id="conpass" placeholder="Confirm Password"></div>
+<label id="cpass"></label><br>
+<div><input type="text" id="mobile" placeholder="Phone"></div>
+<label id="ph"></label><br>
+<button onclick="abc()">Submit</button>
+</div>
+</form>
+<script>
+function abc(){
+	var name=document.getElementById("name").value
+	var err=document.getElementById("msg");
+	var email=document.getElementById("email").value
+	var rr=document.getElementById("em");
+	var password=document.getElementById("pass").value
+	var ps=document.getElementById("pas");
+	var conpass=document.getElementById("conpass").value
+	var passs=document.getElementById("cpass");
+	
+	var phone=document.getElementById("mobile").value
+	var pho=document.getElementById("ph");	
+	if(name==""||!isNaN(name)||name.length<3||name.length>20){
+		err.innerHTML="PLEASE ENTER THE FULLNAME";
+		return false;
+		}
+	if(email==""||!isNaN(email)){
+		rr.innerHTML="INVALID FORMATs";
+		return false;
+		}
+	if(password=""||password.length>=12){
+		ps.innerHTML="please enter password";
+		return false;
+		}
+	if(conpass=""||conpass!=(password)){
+		passs.innerHTML="please enter the valid password";
+		return false;
+		}
+	if(phone=""||!isNaN(phone)){
+		pho.innerHTML="please enter the valid password";
+		return false;
+		}
+		
+	
+	
+}
+</script>
+</body>
+</html>
